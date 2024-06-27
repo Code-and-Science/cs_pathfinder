@@ -4,6 +4,7 @@
 
 
 ## Concepts
+
 - Counting steps
 - Time complexity
 - Space complexity
@@ -16,6 +17,7 @@
   - O(n * log n)
 
 ## Learning material
+
 - List containing links to information about this topic
 - Can be blog posts, videos, interactive courses etc.
 
