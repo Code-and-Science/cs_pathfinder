@@ -1,29 +1,15 @@
-# Generate a list of one million elements, which are unique integers in the range of 0 to 10^6-1.
-## Implement binary search using recursion
-# Implement binary search using iteration
-## Measure the time taken with timenow() function at the beginning and end of the search
-## Use c-profile for performance analysis
-
-## How long does it take when the numbers are not random but already sorted?
 
 
 import random
-
-def generate_list_random():
-    return random.sample(range(1000000), 100)
-random_list = generate_list_random()
-print(f"Random list: {random_list}")
+import cProfile
+import time
 
 
+# Use random number withing range as target
+target = random.randint(1, 1_000)
 def generate_list_sequential():
-    return list(range(100))
+    return list(range(1_000))
 sequential_list = generate_list_sequential()
-print(f"Sequential list: {sequential_list}")
-
-
-target = 27
-
-
 def binary_search_iterative(list, target):
     left = 0
     right = len(list) - 1
@@ -64,3 +50,21 @@ if result != -1:
     print(f"Element search recursive found at index {result}.")
 else:
     print("Element search recursive not found.")
+
+
+# Performance analysis
+
+# Profile iterative search
+print("\nIterative Binary Search:")
+start_time = time.perf_counter()
+cProfile.run("binary_search_iterative(sequential_list, target)")
+end_time = time.perf_counter()
+print(f"Total time: {end_time - start_time:.4f} seconds")
+
+# Profile recursive search
+print("\nRecursive Binary Search:")
+start_time = time.perf_counter()
+cProfile.run("binary_search_recursive(sequential_list, target, 0, len(sequential_list) - 1)")
+end_time = time.perf_counter()
+print(f"Total time: {end_time - start_time:.4f} seconds")
+
