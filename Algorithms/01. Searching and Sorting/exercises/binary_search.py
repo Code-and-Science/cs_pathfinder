@@ -14,22 +14,6 @@ def binary_search_iterative(lst, target):
     while left <= right:
         mid = (left + right) // 2
         if lst[mid] == target:
-            return mid
-        elif lst[mid] < target:
-            left = mid + 1
-        else:
-            right = mid - 1
-    return -1
-
-
-def binary_search_iterative(lst, target):
-    if not lst:
-        return -1
-
-    left, right = 0, len(lst) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if lst[mid] == target:
             if mid == 0 or lst[mid - 1] != target:
                 return mid
             right = mid - 1
@@ -37,7 +21,7 @@ def binary_search_iterative(lst, target):
             left = mid + 1
         else:
             right = mid - 1
-    print(f"Searching for {target} in {lst}...")
+
     return -1
 
 
