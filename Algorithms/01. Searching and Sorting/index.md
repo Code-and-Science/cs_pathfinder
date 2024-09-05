@@ -9,8 +9,7 @@ take a first look on general principles of problem solving like
 
 ## Concepts
 
-- Searching
-- Binary search
+- Binary Search
 - Sorting algorithms
   - Bubblesort
   - Quicksort
@@ -19,11 +18,11 @@ take a first look on general principles of problem solving like
 
 ## Learning material
 
-- List containing links to information about this topic
-- Can be blog posts, videos, interactive courses etc.
+- [Binary Search Algorithm in 100 Seconds](https://www.youtube.com/watch?v=MFhxShGxHWc&t)
 
 ## Exercises
 
+- Implement Binary search (Solution recursion), (Solution iteration)
 - Implement functions that sort a list using bubblesort, quicksort
   and mergesort.
 - How long does it take to sort a list of random numbers with each algorithm?
@@ -31,4 +30,3 @@ take a first look on general principles of problem solving like
   - with 1000 numbers
   - with 100000 numbers
   - with 10000000 numbers?
-- How long does it take when the numbers are not random but already sorted?
