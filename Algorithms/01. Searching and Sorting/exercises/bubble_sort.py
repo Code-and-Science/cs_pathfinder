@@ -1,9 +1,8 @@
-# generate unsorted list of random integers
-
-# use same interface for different sorting algorithms:
-
-
-# use matplot library for plotting test results
+from performance_graphing_bubble import (
+    analyze_bubble_sort_performance,
+    plot_bubble_sort_performance,
+    print_bubble_sort_results,
+)
 
 
 def bubble_sort(lst):
@@ -22,6 +21,8 @@ def bubble_sort(lst):
     return lst
 
 
-lst = [64, 34, 25, 12, 22, 11, 90]
-sorted_lst = bubble_sort(lst)
-print(f"Sorted list: {sorted_lst}")
+if __name__ == "__main__":
+    bubble_sizes = [10, 100, 1_000, 10_000]
+    bubble_times = analyze_bubble_sort_performance(bubble_sizes, bubble_sort)
+    plot_bubble_sort_performance(bubble_sizes, bubble_times)
+    print_bubble_sort_results(bubble_sizes, bubble_times)
