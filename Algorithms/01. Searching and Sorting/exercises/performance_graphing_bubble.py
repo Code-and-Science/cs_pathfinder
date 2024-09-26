@@ -3,24 +3,19 @@ import time
 import matplotlib.pyplot as plt
 
 
-def analyze_bubble_sort_performance(sizes, bubble_sort_func):
-
+def analyze_sort_performance(sizes, sort_func):
     times = []
-
     for size in sizes:
         input_data = [random.randint(0, size * 10) for _ in range(size)]
-
         start_time = time.perf_counter()
-        sorted_list = bubble_sort_func(input_data.copy())
+        sort_func(input_data.copy())
         end_time = time.perf_counter()
-
         execution_time = end_time - start_time
         times.append(execution_time)
-
     return times
 
 
-def plot_bubble_sort_performance(sizes, times):
+def plot_sort_performance(sizes, times):
     plt.figure(figsize=(10, 6))
     plt.plot(sizes, times, marker="o")
     plt.xlabel("Number of elements")
@@ -32,7 +27,7 @@ def plot_bubble_sort_performance(sizes, times):
     plt.show()
 
 
-def print_bubble_sort_results(sizes, times):
+def print_sort_results(sizes, times):
     print("\nBubble Sort Performance Results:")
     for i, size in enumerate(sizes):
         print(f"Size: {size}, Time: {times[i]:.6f} seconds")
