@@ -1,5 +1,5 @@
 import random
-from performance_graphing import run_performance_analysis
+from performance_graphing_binary import run_performance_analysis
 
 
 def generate_list_sequential(size):
