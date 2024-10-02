@@ -21,8 +21,15 @@ def bubble_sort(lst):
     return lst
 
 
+# Time complexity wise this algorithm takes quadratic time.
+# Complexity of the outer loop is n, complexity of the inner loop is sort of 1/2n, (n * n/2) = n^2/2
+
+# Worst case: Sorted List in descending order: O(n^2)
+# Average case: Random List: O(n^2)
+# Best case: Sorted List in Ascending order: O(n)
+
 if __name__ == "__main__":
-    sizes = [10, 100, 1000, 10000]
+    sizes = [10, 100, 1000, 2000, 3000, 4000, 5000, 7000, 10000]
     times = analyze_sort_performance(sizes, bubble_sort)
     print_sort_results(sizes, times)
     plot_sort_performance(sizes, times)
