@@ -7,6 +7,8 @@ def analyze_sort_performance(sizes, sort_func):
     times = []
     for size in sizes:
         input_data = [random.randint(0, size * 10) for _ in range(size)]
+        # input_data = [i for i in range(size)]
+        # input_data = [i for i in range(size, 0, -1)]
         start_time = time.perf_counter()
         sort_func(input_data.copy())
         end_time = time.perf_counter()
